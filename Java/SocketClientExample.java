@@ -20,7 +20,7 @@ public class SocketClientExample {
 		ObjectOutputStream oos = null;
 		ObjectInputStream ois = null;
 
-		for(int i=0; i<5;i++){
+		for(int i = 0; i < 5; i++){
 			//establish socket connection to server
 			socket = new Socket(host.getHostName(), 9876);
 			//write to socket using ObjectOutputStream
@@ -35,6 +35,7 @@ public class SocketClientExample {
 			//close resources
 			ois.close();
 			oos.close();
-			Thread.sleep(100);
+			Thread.sleep(1000);
 		}
 	}
+}
