@@ -15,7 +15,7 @@ public class SocketClientExample {
 
 	public static void main(String[] args)throws UnknownHostException, IOException, ClassNotFoundException, InterruptedException{
 		//get the localhost IP address, if server is running on some other IP, you need to use that
-		InetAddress host = InetAddress.getLocalHost();
+		InetAddress host = InetAddress.getByName("192.168.1.157");
 		Socket socket = null;
 		ObjectOutputStream oos = null;
 		ObjectInputStream ois = null;
