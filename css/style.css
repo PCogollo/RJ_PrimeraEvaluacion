@@ -1,0 +1,31 @@
+body {
+	background-color: white;
+}
+
+h1{
+	color: darkblue;
+	text-align: center;
+}
+
+h2{
+	color: darkcyan;
+	text-align: right;
+}
+
+body{
+	text-align: center;
+	font-style: verdana;
+	font-size: 20px;
+}
+
+#demo1{
+	color: green;
+	text-align: center;
+	font-size: 40px;
+}
+
+#SumHeader{
+	color:  yellowgreen;
+	text-align: left;
+	font-size: 30px;
+}
