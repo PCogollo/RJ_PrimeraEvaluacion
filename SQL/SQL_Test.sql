@@ -20,7 +20,7 @@ create table Persons(
     LastName varchar(255) NOT NULL,
     FirstName varchar(255), 
     Age int,
-    Nationality varchar(255),
+    Nationality varchar(255)
 );
 
 alter table Persons

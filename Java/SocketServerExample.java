@@ -4,6 +4,7 @@ import java.io.ObjectOutputStream;
 import java.lang.ClassNotFoundException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Scanner;
 
 /**
 * This class implements java Socket server
@@ -20,6 +21,13 @@ public class SocketServerExample {
 	public static void main(String args[]) throws IOException, ClassNotFoundException{
 		//create the socket server object
 		server = new ServerSocket(port);
+
+		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+	    System.out.println("Enter username");
+
+	    String userName = myObj.nextLine();  // Read user input
+	    System.out.println("Username is: " + userName);  
+
 		//keep listens indefinitely until receives 'exit' call or program terminates
 		while(true){
 			System.out.println("Waiting for the client request");
