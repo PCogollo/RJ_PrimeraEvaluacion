@@ -11,9 +11,14 @@
 
 	<body>	
 		<h1 id="SumHeader">
-			<script>printV(SumTwoVariables(2,5)); </script>
-			<input type="button" onclick="printV('Hello')" value ="Click to say hello">
+			input1: <input type="text" name="input1"><br>
+			input2: <input type="" name="input2"> <br>
+
+			<script>printV(SumTwoVariables(input1,input2)) </script>
+			<input type="button" onclick="SumTwoVariables(input1,input2)" value ="Result">
 		</h1>
+
+		<h2> This is a header 2 </h2>
 
 		<p id="testNumber">
 			<input type="button" onclick="checkNumber(-3)" value="Check Number">

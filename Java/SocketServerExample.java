@@ -38,6 +38,7 @@ public class SocketServerExample {
 			ois.close();
 			oos.close();
 			socket.close();
+
 			//terminate the server if client sends exit request
 			if(message.equalsIgnoreCase("exit")) break;
 		}

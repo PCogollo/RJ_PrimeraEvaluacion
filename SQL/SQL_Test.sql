@@ -21,9 +21,8 @@ create table Persons(
     FirstName varchar(255), 
     Age int,
     Nationality varchar(255),
-    constraint PK_Person primary key (ID)
-
 );
+
 alter table Persons
 DROP PRIMARY KEY;
 INSERT INTO Persons (ID, LastName, FirstName, Age, Nationality) VALUES (5, 'Lau2', 'Jorgen2', 51, 'Danish2');

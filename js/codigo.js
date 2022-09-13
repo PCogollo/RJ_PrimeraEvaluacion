@@ -22,5 +22,3 @@ function checkNumber(number){
 		document.getElementById("testNumber").innerHTML = "Hello World";
 	}
 }
-
-document
