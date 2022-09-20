@@ -4,7 +4,6 @@ import java.io.ObjectOutputStream;
 import java.lang.ClassNotFoundException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
 
 /**
 * This class implements java Socket server
@@ -22,36 +21,38 @@ public class SocketServerExample {
 		//create the socket server object
 		server = new ServerSocket(port);
 
-		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-	    System.out.println("Enter username");
 
-	    String userName = myObj.nextLine();  // Read user input
-	    System.out.println("Username is: " + userName);  
 
 		//keep listens indefinitely until receives 'exit' call or program terminates
 		while(true){
 			System.out.println("Waiting for the client request");
 			//creating socket and waiting for client connection
 			Socket socket = server.accept();
+
 			//read from socket to ObjectInputStream object
 			ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
+
 			//convert ObjectInputStream object to String
-			String message = (String) ois.readObject();
-			System.out.println("Message Received: " + message);
+		    String chosenWord = (String) ois.readObject();  
+		    System.out.println("The client's chosen word is: " + chosenWord);
+
 			//create ObjectOutputStream object
 			ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+
 			//write object to Socket
-			oos.writeObject("Hi Client "+message);
+			oos.writeObject("Your chosen letter was: " + chosenWord);
+
 			//close resources
 			ois.close();
 			oos.close();
 			socket.close();
 
 			//terminate the server if client sends exit request
-			if(message.equalsIgnoreCase("exit")) break;
+			if(chosenWord.equalsIgnoreCase("exit")) break;
 		}
 		System.out.println("Shutting down Socket server!!");
 		//close the ServerSocket object
+
 		server.close();
 	}
 
